@@ -1,0 +1,39 @@
+@page
+@model DR4TP1WEB.Pages.Evento.CriarEvento
+@{
+    ViewData["Title"] = "Cadastrar Evento";
+}
+
+<div class="container mt-4">
+    <h2>Cadastrar Novo Evento</h2>
+    <hr />
+
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="mb-3">
+            <label asp-for="Event.Titulo" class="form-label"></label>
+            <input asp-for="Event.Titulo" class="form-control" />
+            <span asp-validation-for="Event.Titulo" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Event.Data" class="form-label"></label>
+            <input asp-for="Event.Data" class="form-control" type="datetime-local" />
+            <span asp-validation-for="Event.Data" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Event.Local" class="form-label"></label>
+            <input asp-for="Event.Local" class="form-control" />
+            <span asp-validation-for="Event.Local" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salvar Evento</button>
+        <a asp-page="./Index" class="btn btn-secondary">Voltar</a>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,33 @@
+@page
+@model DR4TP1WEB.Pages.Evento.Index
+
+@{
+    ViewData["Title"] = "Eventos";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Lista de Eventos</h2>
+        <a asp-page="./Create" class="btn btn-success">Novo Evento</a>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Título</th>
+            <th>Data</th>
+            <th>Local</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var v in Model.Events)
+        {
+            <tr>
+                <td>@v.Titulo</td>
+                <td>@v.Data.ToString("dd/MM/yyyy HH:mm")</td>
+                <td>@v.Local</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
